@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
+        body {
+            display: flex;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 200px;
+            height: 100vh;
+            background-color: #9caf88; /* Sage green */
+            padding: 20px 0;
+            position: fixed;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #d1d9c6;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 200px;
+            padding: 20px;
+            width: calc(100% - 200px);
+            background-color: white;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #6b7d5e; /* Darker sage green */
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Simple page styling */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h1>Welcome to Our Website</h1>
+            <p>This is the home page of our simple website. You can navigate to other pages using the menu on the left.</p>
+            <p>We've kept the design clean and simple with a nice sage green color scheme.</p>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <h1>About Us</h1>
+            <p>This is where you would put information about your website or organization.</p>
+            <p>For example, you might describe what the site is for and who it's for.</p>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <h1>Contact Us</h1>
+            <p>Here's where you would put contact information.</p>
+            <p>You might include an email address, phone number, or social media links.</p>
+        </div>
+    </main>
+
+    <script>
+        // Simple JavaScript to switch between pages
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

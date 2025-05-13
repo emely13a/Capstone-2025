@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Networks Website</title>
+    <title>Four Page Navigation</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -46,32 +46,9 @@
             z-index: 100;
         }
 
-        .logo-container {
-            padding: 0 25px 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            margin-bottom: 30px;
-        }
-
-        .logo {
-            font-family: 'Merriweather', serif;
-            color: var(--white);
-            font-size: 26px;
-            font-weight: 700;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 28px;
-            color: var(--sage-light);
-        }
-
         nav ul {
             list-style: none;
-            padding: 0 15px;
+            padding: 15px;
             flex-grow: 1;
         }
 
@@ -126,15 +103,6 @@
 
         nav a.active:before {
             transform: scaleY(1);
-        }
-
-        .nav-footer {
-            padding: 20px;
-            color: var(--sage-light);
-            font-size: 14px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            margin-top: auto;
         }
 
         /* Main Content */
@@ -222,13 +190,6 @@
 <body>
     <!-- Enhanced Navigation Bar -->
     <nav>
-        <div class="logo-container">
-            <div class="logo">
-                <i class="fas fa-leaf"></i>
-                <span>EcoSite</span>
-            </div>
-        </div>
-        
         <ul>
             <li>
                 <a href="#" onclick="showPage('home')" class="active">
@@ -243,58 +204,68 @@
                 </a>
             </li>
             <li>
+                <a href="#" onclick="showPage('services')">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
                 <a href="#" onclick="showPage('contact')">
                     <i class="fas fa-envelope"></i>
                     <span>Contact</span>
                 </a>
             </li>
         </ul>
-        
-
     </nav>
 
     <!-- Main Content -->
     <main>
         <!-- Home Page -->
         <div id="home" class="page active">
-            <h1>Welcome to Our Nature Site</h1>
-            <p>Discover the beauty of nature through our carefully curated content and resources.</p>
+            <h1>Welcome to Our Website</h1>
+            <p>This is the home page with four navigation options in the sidebar.</p>
             
             <div class="card">
-                <h2>Featured Article</h2>
-                <p>Explore the wonders of sage plants and their benefits to both the environment and human health. These versatile plants offer more than just their distinctive color and aroma.</p>
+                <h2>Featured Content</h2>
+                <p>The navigation now includes four buttons: Home, About, Services, and Contact.</p>
             </div>
-            
-            <p>Our navigation now features a beautiful gradient, icons, and smooth hover effects while maintaining excellent usability.</p>
         </div>
 
         <!-- About Page -->
         <div id="about" class="page">
-            <h1>About Our Mission</h1>
-            <p>We're dedicated to bringing nature closer to people through education and inspiration.</p>
+            <h1>About Us</h1>
+            <p>Learn more about our organization and mission.</p>
             
             <div class="card">
-                <h2>Our Values</h2>
-                <p>Sustainability, education, and community are at the heart of everything we do. We believe in making environmental awareness accessible to everyone.</p>
+                <h2>Our Story</h2>
+                <p>We've been serving our community with dedication and passion.</p>
             </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page">
+            <h1>Our Services</h1>
+            <p>Discover what we can offer you.</p>
             
-            <p>The enhanced navigation includes Font Awesome icons, active state indicators, and a nice footer area.</p>
+            <div class="card">
+                <h2>Service Offerings</h2>
+                <p>We provide a range of services to meet your needs.</p>
+            </div>
         </div>
 
         <!-- Contact Page -->
         <div id="contact" class="page">
-            <h1>Get In Touch</h1>
-            <p>We'd love to hear from you! Reach out with questions or suggestions.</p>
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team.</p>
             
             <div class="card">
                 <h2>Contact Information</h2>
-                <p>Email: info@ecosite.example<br>
-                Phone: (123) 456-7890<br>
-                Address: 123 Nature Way, Greenville</p>
+                <p>Email: contact@example.com<br>
+                Phone: (123) 456-7890</p>
             </div>
             
             <footer>
-                &copy; 2023 EcoSite. All rights reserved.
+                &copy; 2023 Company Name. All rights reserved.
             </footer>
         </div>
     </main>

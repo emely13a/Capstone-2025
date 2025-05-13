@@ -3,81 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <title>Stylish Navigation Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Basic Reset */
+        :root {
+            --sage: #9caf88;
+            --sage-dark: #7a8d6a;
+            --sage-light: #c8d5bb;
+            --white: #ffffff;
+            --off-white: #f8f8f8;
+            --text: #333333;
+            --text-light: #666666;
+        }
+
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         body {
             display: flex;
-            background-color: #f8f8f8;
+            background-color: var(--off-white);
+            font-family: 'Nunito', sans-serif;
+            color: var(--text);
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
+        /* Enhanced Navigation */
         nav {
-            width: 220px;
+            width: 260px;
             height: 100vh;
-            background-color: #9caf88; /* Sage green */
-            padding: 40px 0;
+            background: linear-gradient(to bottom, var(--sage), var(--sage-dark));
+            padding: 30px 0;
             position: fixed;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .logo-container {
+            padding: 0 25px 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
         }
 
         .logo {
+            font-family: 'Merriweather', serif;
+            color: var(--white);
+            font-size: 26px;
+            font-weight: 700;
             text-align: center;
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-            color: white;
-            font-size: 24px;
-            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: var(--sage-light);
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
+            padding: 0 15px;
+            flex-grow: 1;
         }
 
         nav li {
-            padding: 15px 25px;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-        }
-
-        nav li:hover {
-            background-color: #8a9c77;
-            border-left: 3px solid #f8f8f8;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         nav a {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
             text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-family: 'Open Sans', sans-serif;
+            color: var(--white);
+            font-size: 16px;
             font-weight: 600;
-            display: block;
+            position: relative;
+        }
+
+        nav a i {
+            margin-right: 12px;
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--white);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        nav li:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        nav li:hover a:before {
+            transform: scaleY(1);
+        }
+
+        nav a.active {
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        nav a.active:before {
+            transform: scaleY(1);
+        }
+
+        .nav-footer {
+            padding: 20px;
+            color: var(--sage-light);
+            font-size: 14px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: auto;
         }
 
         /* Main Content */
         main {
-            margin-left: 220px;
+            margin-left: 260px;
             padding: 40px;
-            width: calc(100% - 220px);
-            background-color: white;
+            width: calc(100% - 260px);
+            background-color: var(--white);
             min-height: 100vh;
         }
 
         h1 {
-            color: #6b7d5e; /* Darker sage green */
-            margin-bottom: 25px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            color: var(--sage-dark);
+            margin-bottom: 30px;
+            font-family: 'Merriweather', serif;
+            font-size: 2.4rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
         h1:after {
@@ -85,19 +160,13 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: #9caf88;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(to right, var(--sage), var(--sage-light));
+            border-radius: 2px;
         }
 
-        p {
-            color: #555;
-            margin-bottom: 20px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1.05rem;
-            max-width: 800px;
-        }
-
+        /* Page Content Styles */
         .page {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -108,86 +177,132 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Simple card for content sections */
         .card {
-            background: #f8f8f8;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            background: var(--off-white);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--sage);
         }
 
-        /* Footer */
+        .card h2 {
+            color: var(--sage-dark);
+            margin-bottom: 15px;
+            font-family: 'Merriweather', serif;
+        }
+
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid #eee;
-            color: #888;
+            color: var(--text-light);
             font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            nav {
+                width: 220px;
+                padding: 20px 0;
+            }
+            main {
+                margin-left: 220px;
+                width: calc(100% - 220px);
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Enhanced Navigation Bar -->
     <nav>
-        <div class="logo">Website Name</div>
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>EcoSite</span>
+            </div>
+        </div>
+        
         <ul>
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('about')">About</a></li>
-            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li>
+                <a href="#" onclick="showPage('home')" class="active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showPage('about')">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showPage('contact')">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
         </ul>
+        
+        <div class="nav-footer">
+            © 2023 EcoSite
+        </div>
     </nav>
 
     <!-- Main Content -->
     <main>
         <!-- Home Page -->
         <div id="home" class="page active">
-            <h1>Welcome to Our Website</h1>
-            <p>This is the home page of our simple website. You can navigate to other pages using the menu on the left.</p>
+            <h1>Welcome to Our Nature Site</h1>
+            <p>Discover the beauty of nature through our carefully curated content and resources.</p>
             
             <div class="card">
-                <h2>Featured Content</h2>
-                <p>We've improved the design with better typography and subtle animations while keeping it clean and accessible.</p>
+                <h2>Featured Article</h2>
+                <p>Explore the wonders of sage plants and their benefits to both the environment and human health. These versatile plants offer more than just their distinctive color and aroma.</p>
             </div>
             
-            <p>The color scheme uses sage green and neutral colors for a pleasant, professional look.</p>
+            <p>Our navigation now features a beautiful gradient, icons, and smooth hover effects while maintaining excellent usability.</p>
         </div>
 
         <!-- About Page -->
         <div id="about" class="page">
-            <h1>About Us</h1>
-            <p>This is where you would put information about your website or organization.</p>
+            <h1>About Our Mission</h1>
+            <p>We're dedicated to bringing nature closer to people through education and inspiration.</p>
             
             <div class="card">
-                <h2>Our Mission</h2>
-                <p>For example, you might describe what the site is for and who it's for. This card helps organize content sections.</p>
+                <h2>Our Values</h2>
+                <p>Sustainability, education, and community are at the heart of everything we do. We believe in making environmental awareness accessible to everyone.</p>
             </div>
             
-            <p>The template now uses Google Fonts (Open Sans for body text and Playfair Display for headings) for better typography.</p>
+            <p>The enhanced navigation includes Font Awesome icons, active state indicators, and a nice footer area.</p>
         </div>
 
         <!-- Contact Page -->
         <div id="contact" class="page">
-            <h1>Contact Us</h1>
-            <p>Here's where you would put contact information.</p>
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you! Reach out with questions or suggestions.</p>
             
             <div class="card">
-                <h2>Get in Touch</h2>
-                <p>You might include an email address, phone number, or social media links in this section.</p>
+                <h2>Contact Information</h2>
+                <p>Email: info@ecosite.example<br>
+                Phone: (123) 456-7890<br>
+                Address: 123 Nature Way, Greenville</p>
             </div>
             
             <footer>
-                &copy; 2023 Your Website Name. All rights reserved.
+                &copy; 2023 EcoSite. All rights reserved.
             </footer>
         </div>
     </main>
 
     <script>
-        // Simple JavaScript to switch between pages
+        // Enhanced page switching with active state management
         function showPage(pageId) {
             // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
@@ -197,7 +312,13 @@
             // Show the selected page
             document.getElementById(pageId).classList.add('active');
             
-            // Scroll to top when switching pages
+            // Update active state in navigation
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Scroll to top
             window.scrollTo(0, 0);
         }
     </script>

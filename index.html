@@ -164,6 +164,41 @@
             font-family: 'Merriweather', serif;
         }
 
+        .card-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card-text {
+            flex: 1;
+        }
+
+        .card-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .video-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--sage);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .video-link:hover {
+            background-color: var(--sage-dark);
+        }
+
         footer {
             margin-top: 50px;
             padding-top: 20px;
@@ -183,6 +218,13 @@
                 margin-left: 220px;
                 width: calc(100% - 220px);
                 padding: 30px;
+            }
+            .card-content {
+                flex-direction: column;
+            }
+            .card-image img {
+                width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -232,59 +274,75 @@ Start exploring and build your knowledge of the networks that power the digital 
             </div>
         </div>
 
-      
-<!-- About Page -->
-<div id="about" class="page">
-    <h1>Networking Overview</h1>
-    <p>Computer networking is how devices—like computers, phones, and servers—connect and communicate with each other to share data and resources. Understanding networks is essential in today's digital world. Below is a quick look at the key parts of networking:</p>
-    
-    <div class="card">
-        <h2>Networking Components</h2>
-        <p>Networks are made up of several key components that help devices connect and communicate:</p>
-        <ul>
-            <li><strong>Routers:</strong> Direct data between different networks.</li>
-            <li><strong>Switches:</strong> Connect devices within a network and manage traffic.</li>
-            <li><strong>Hubs:</strong> Basic devices that connect multiple computers in a network (less common today).</li>
-            <li><strong>Modems:</strong> Connect networks to the internet.</li>
-            <li><strong>Cables & Wireless Signals:</strong> Used for physical and wireless connections.</li>
-            <li><strong>Network Interface Cards (NICs):</strong> Allow computers to join a network.</li>
-        </ul>
-    </div>
+        <!-- About Page -->
+        <div id="about" class="page">
+            <h1>Networking Overview</h1>
+            <p>Computer networking is how devices—like computers, phones, and servers—connect and communicate with each other to share data and resources. Understanding networks is essential in today's digital world. Below is a quick look at the key parts of networking:</p>
+            
+            <div class="card">
+                <h2>Networking Components</h2>
+                <div class="card-content">
+                    <div class="card-text">
+                        <p>Networks are made up of several key components that help devices connect and communicate:</p>
+                        <ul>
+                            <li><strong>Routers:</strong> Direct data between different networks.</li>
+                            <li><strong>Switches:</strong> Connect devices within a network and manage traffic.</li>
+                            <li><strong>Hubs:</strong> Basic devices that connect multiple computers in a network (less common today).</li>
+                            <li><strong>Modems:</strong> Connect networks to the internet.</li>
+                            <li><strong>Cables & Wireless Signals:</strong> Used for physical and wireless connections.</li>
+                            <li><strong>Network Interface Cards (NICs):</strong> Allow computers to join a network.</li>
+                        </ul>
+                    </div>
+                    <div class="card-image">
+                        <img src="linux.jpeg" alt="Network Components Graphic" height="50%" width="50%">
+                    </div>
+                </div>
+            </div>
 
-    <div class="card">
-        <h2>Network Addressing</h2>
-        <p>Every device on a network needs an address to send and receive data:</p>
-        <ul>
-            <li><strong>IP Address:</strong> A unique number (like 192.168.0.1) for each device</li>
-            <li><strong>MAC Address:</strong> A number tied to the device's hardware</li>
-            <li><strong>DNS:</strong> Changes website names (like google.com) into IP addresses</li>
-        </ul>
-    </div>
+            <div class="card">
+                <h2>Network Addressing</h2>
+                <p>Every device on a network needs an address to send and receive data:</p>
+                <ul>
+                    <li><strong>IP Address:</strong> A unique number (like 192.168.0.1) for each device</li>
+                    <li><strong>MAC Address:</strong> A number tied to the device's hardware</li>
+                    <li><strong>DNS:</strong> Changes website names (like google.com) into IP addresses</li>
+                </ul>
+            </div>
 
-    <div class="card">
-        <h2>Benefits of Networking</h2>
-        <p>Networks provide many advantages for users and organizations:</p>
-        <ul>
-            <li>Share files, printers, and internet</li>
-            <li>Communicate easily through email or chat</li>
-            <li>Keep data safe with backups</li>
-            <li>Work from anywhere</li>
-            <li>Save money by sharing resources</li>
-        </ul>
-    </div>
+            <div class="card">
+                <h2>Benefits of Networking</h2>
+                <p>Networks provide many advantages for users and organizations:</p>
+                <ul>
+                    <li>Share files, printers, and internet</li>
+                    <li>Communicate easily through email or chat</li>
+                    <li>Keep data safe with backups</li>
+                    <li>Work from anywhere</li>
+                    <li>Save money by sharing resources</li>
+                </ul>
+            </div>
 
-    <div class="card">
-        <h2>Types of Networks</h2>
-        <p>Different network types serve different needs and scales:</p>
-        <ul>
-            <li><strong>LAN:</strong> Small network for homes or schools</li>
-            <li><strong>WAN:</strong> Large network over big distances (like the internet)</li>
-            <li><strong>MAN:</strong> Covers a city or campus</li>
-            <li><strong>PAN:</strong> Connects personal devices (like phones and watches)</li>
-            <li><strong>WLAN:</strong> A wireless LAN using Wi-Fi</li>
-        </ul>
-    </div>
-</div>
+            <div class="card">
+                <h2>Types of Networks</h2>
+                <p>Different network types serve different needs and scales:</p>
+                <ul>
+                    <li><strong>LAN:</strong> Small network for homes or schools</li>
+                    <li><strong>WAN:</strong> Large network over big distances (like the internet)</li>
+                    <li><strong>MAN:</strong> Covers a city or campus</li>
+                    <li><strong>PAN:</strong> Connects personal devices (like phones and watches)</li>
+                    <li><strong>WLAN:</strong> A wireless LAN using Wi-Fi</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Networking Video</h2>
+                <p>Watch this video to learn more about computer networks:</p>
+                <div class="video-container">
+                    <a href="https://www.youtube.com/watch?v=tSodBEAJz9Y&t=87s" class="video-link" target="_blank">
+                        Watch Networking Video
+                    </a>
+                </div>
+            </div>
+        </div>
         
         <!-- Services Page -->
         <div id="services" class="page">
